@@ -17,17 +17,20 @@ universalDecorator.call = function(ctx, target) {
 
 function testPoc() {
 	// create a test subject
-	var subject = {};
+	var subject;
 
 	// simulate decoration by factory invocation (with parentheses)
+	subject = {};
 	universalDecorator('my message')(subject);
 	console.assert(subject.msg == 'my message');
 
 	// simulate no-arg decoration by factory invocation (with parentheses)
+	subject = {};
 	universalDecorator()(subject);
 	console.assert(subject.msg == 'Default message');
 
 	// simulate no-arg decoration by decorator invocation (without parentheses)
+	subject = {};
 	universalDecorator.call(undefined, subject);  // <== This is all we need. !!!
 	// If the runtime calls the decorators via `.call` i.s.o directly, we can trap
 	// the invocation and do whatever we want there. It enables userland code to
