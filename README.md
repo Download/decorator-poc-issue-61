@@ -1,0 +1,1 @@
+﻿SEE [wycats/javascript-decorators/issues/61](https://github.com/wycats/javascript-decorators/issues/61)
